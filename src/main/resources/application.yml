@@ -1,0 +1,15 @@
+api:
+  config:
+    blocked:
+      extensions:
+      - .exe
+      - .dll
+      - .bin
+      - .dat
+      - .osx
+async:
+    corePoolSize: 100
+    maxPoolSize: 100
+    queueCapacity: 10000
+    threadNamePrefix: "api-async"
+    waitForTasksToCompleteOnShutdown: true
