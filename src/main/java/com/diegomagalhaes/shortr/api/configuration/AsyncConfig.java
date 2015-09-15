@@ -13,8 +13,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  * Created by diego.magalhaes on 9/13/2015.
  */
 @Configuration
-public class AsyncConfig  extends WebMvcConfigurerAdapter {
-    @Autowired AsyncProperties asyncProperties;
+public class AsyncConfig extends WebMvcConfigurerAdapter {
+    @Autowired
+    AsyncProperties asyncProperties;
 
     @Bean
     protected ThreadPoolTaskExecutor mvcTaskExecutor() {
@@ -24,7 +25,7 @@ public class AsyncConfig  extends WebMvcConfigurerAdapter {
         executor.setMaxPoolSize(asyncProperties.getMaxPoolSize());
         executor.setQueueCapacity(asyncProperties.getQueueCapacity());
         executor.setWaitForTasksToCompleteOnShutdown(asyncProperties.isWaitForTasksToCompleteOnShutdown());
-        executor.setRejectedExecutionHandler( new ThreadPoolExecutor.CallerRunsPolicy());
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         return executor;
     }
 

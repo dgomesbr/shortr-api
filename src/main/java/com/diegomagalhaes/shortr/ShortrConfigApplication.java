@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 @EnableConfigurationProperties({AsyncProperties.class, APIProperties.class})
-public class ShortrConfigApplication{
+public class ShortrConfigApplication {
     public static void main(String[] args) {
         SpringApplication.run(ShortrConfigApplication.class, args);
     }
